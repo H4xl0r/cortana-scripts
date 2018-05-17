@@ -110,13 +110,13 @@ popup beefstrike {
 			item "START" { cmd_async("" . $beefpath . "/beef -v");  append($console , "\n\c9[+] BeEF service STARTED: [service beef-xss start]" ); }
 			item "STOP" { cmd_async("service beef-xss stop"); append($console , "\n\c9[+] BeEF service ENDED: [service beef-xss stop]" ); }
 			# You can replace leafpad by your favorite text editor, example: Vim, Notepad ...
-			item "CONFIG" { cmd_async("xterm -e 'leafpad " . $beefpath . "/config.yaml '");
+			item "CONFIG" { cmd_async("gnome-terminal -- 'gedit " . $beefpath . "/config.yaml '");
 				append($console, "\n\c4[!] You need to have local access to BeEF Server machine for this task.");
-				cmd_async("xterm -e 'leafpad " . $beefpath . "/extensions/social_engineering/config.yaml '");
+				cmd_async("gnome-terminal -- 'leafpad " . $beefpath . "/extensions/social_engineering/config.yaml '");
 				}
 			item "CUSTOMHOOK" { 
 				append($console, "\n\c4[!] You need to be on the TeamServer machine for this task.");
-				cmd_async("xterm -e 'leafpad " . $beefpath . "/extensions/customhook/config.yaml'");
+				cmd_async("gnome-terminal -- 'leafpad " . $beefpath . "/extensions/customhook/config.yaml'");
 				append($console, "\n\cC[*] Another windows have been open in your Teamserver machine \n Configure and enable CUSTOM HOOK EXTENSION");	
 				append($console, "\cC[*]\cC Help : http://blog.beefproject.com/2013/01/beef-qr-fun.html -- by @xntrik");
 				append($console, "\cC[*] URL SHORTNER SERVICE LIST :\n > ow.ly \n > bit.ly \n > goo.gl \n > t.co \n See long list : http://longurl.org/services");	
